@@ -3,12 +3,14 @@
 #include "sort.h"
 
 /**
- * create_listint - Creates a doubly linked list from an array of integers
+ * bubble_sort - is a simple sorting algorithm that repeatedly steps
+ * through the list, compares adjacent elements and swaps them if they
+ * are in the wrong order.
  *
- * @array: Array to convert to a doubly linked list
+ * @array: Array of the integer list
  * @size: Size of the array
  *
- * Return: Pointer to the first element of the created list. NULL on failure
+ * Return: void function
  */
 
 void bubble_sort(int *array, size_t size)
@@ -16,11 +18,11 @@ void bubble_sort(int *array, size_t size)
 	size_t a, b;
 	int tmp;
 
-	for(a = 0; a < size -1; a++)
+	for (a = 0; a < size - 1; a++)
 	{
-		for(b = 0; b < size - 1 ; b++)
+		for (b = 0; b < size - a - 1 ; b++)
 		{
-			if(array[b] > array[b + 1])
+			if (array[b] > array[b + 1])
 			{
 				tmp = array[b];
 				array[b] = array[b + 1];
