@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "sort.h"
 
 /**
@@ -14,7 +12,6 @@
 void selection_sort(int *array, size_t size)
 {
 	size_t a, b, val_min;
-	int tmp;
 
 	if (size == 0)
 		return;
@@ -28,10 +25,24 @@ void selection_sort(int *array, size_t size)
 		}
 		if (val_min != a)
 		{
-			tmp = array[a];
-			array[a] = array[val_min];
-			array[val_min] = tmp;
+			swap_value(&array[val_min], &array[a]);
 			print_array(array, size);
 		}
 	}
+}
+
+/**
+ * swap_value - swap two elements of array
+ * @a: first element
+ * @b: second element
+ *
+ * Return: void function
+ */
+
+
+void swap_value(int *a, int *b)
+{
+	int temp = *a;
+	*a = *b;
+	*b = temp;
 }
